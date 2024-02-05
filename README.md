@@ -15,3 +15,8 @@ This repository contains the code and documentation for a machine learning class
 5. Scikit-learn
 6. xgboost
 
+<h2>Models Used</h2>
+
+1. Logistic Regression
+1. Random Forest Classifier
+1. XGBoost Classifier
