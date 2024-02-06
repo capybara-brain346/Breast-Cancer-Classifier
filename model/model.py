@@ -5,7 +5,8 @@ from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 
-def Logistic_Regression()
+def Logistic_Regression():
+    pass
 
 
 def main(_):
