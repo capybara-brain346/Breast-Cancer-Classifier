@@ -34,7 +34,6 @@ class Model:
 def main():
     model_data = pd.read_csv(r"..\data\model_training_data.csv")
     Breast_Cancer_Classifier = Model(data=model_data)
-    trained_model = Breast_Cancer_Classifier.train()
     Breast_Cancer_Classifier.final_build()
 
 
