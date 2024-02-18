@@ -4,7 +4,10 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open(r'model\random_forest_model.pkl', 'rb'))
+
+def load_model():
+    model = pickle.load(open(r'model\random_forest_model2.pkl', 'rb'))
+    return model
 
 @app.route('/')
 def home():
@@ -14,7 +17,7 @@ def home():
 def predict():
     int_features = [int(float(x)) for x in request.form.values()]
     final_features = [np.asarray(int_features)]
-    predicted_class = model.predict(final_features)
+    predicted_class = load_model().predict(final_features)
     prediction = ""
     if predicted_class==0:
         prediction = prediction+"Benign Cancer"
