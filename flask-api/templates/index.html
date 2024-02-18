@@ -1,44 +1,78 @@
 <!DOCTYPE html>
-<html >
-
+<html>
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
-  
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: 'Arimo', sans-serif;
+      background-color: #f2f2f2;
+    }
+    .login {
+      background: #fff;
+      padding: 20px;
+      margin: 100px auto;
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .login h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-family: '', cursive;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 
 <body>
- <div class="login">
-	<h1>California House Price Prediction</h1>
+<div class="login">
+    <h1>Know Your Cancers ✨</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="MedInc" placeholder="MedInc" required="required" /><br>
-    	<input type="text" name="HouseAge" placeholder="HouseAge" required="required" /><br>
-        <input type="text" name="AveRooms" placeholder="AveRooms" required="required" /><br>
-        <input type="text" name="AveBedrms" placeholder="AveBedrms" required="required" /><br>
-        <input type="text" name="Population" placeholder="Population" required="required" /><br>
-        <input type="text" name="AveOccup" placeholder="AveOccup" required="required" /><br>
-        <input type="text" name="Latitude" placeholder="Latitude" required="required" /><br>
-        <input type="text" name="Longitude" placeholder="Longitude" required="required" /><br>
-        
-
-       
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="radius_mean" placeholder="Radius Mean" required="required" />
+        <input type="text" name="texture_mean" placeholder="Texture Mean" required="required" />
+        <input type="text" name="area_mean" placeholder="Area Mean" required="required" />
+        <input type="text" name="smoothness_mean" placeholder="Smoothness Mean" required="required" />
+        <input type="text" name="compactness_mean" placeholder="Compactness Mean" required="required" />
+        <input type="text" name="concavity_mean" placeholder="Concavity Mean" required="required" />
+        <input type="text" name="concave_points_mean" placeholder="Concave Points Mean" required="required" />
+        <input type="text" name="symmetry_mean" placeholder="Symmetry Mean" required="required" />
+        <input type="text" name="fractal_dimension_mean" placeholder="Fractal Dimension Mean" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
-   <br>
-   <br>
-  
-   
- </div>
- {{prediction_text}}
-
+    <br>
+    <br>
+    {{ prediction_text }}
+</div>
 </body>
 </html>
