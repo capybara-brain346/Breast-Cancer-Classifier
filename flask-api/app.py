@@ -6,7 +6,7 @@ import pickle
 app = Flask(__name__)
 
 def load_model():
-    model = pickle.load(open(r'model\random_forest_model2.pkl', 'rb'))
+    model = pickle.load(open(r'model\random_forest_model.pkl', 'rb'))
     return model
 
 @app.route('/')
