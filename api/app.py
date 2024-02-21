@@ -7,16 +7,16 @@ app = Flask(__name__)
 
 
 def load_model():
-    model = pickle.load(open('model/model/random_forest_model.pkl', 'rb'))
+    model = pickle.load(open("model/model/random_forest_model.pkl", "rb"))
     return model
 
 
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/predict', methods=['POST'])
+@app.route("/predict", methods=["POST"])
 def predict():
     int_features = [int(float(x)) for x in request.form.values()]
     final_features = [np.asarray(int_features)]
@@ -27,8 +27,10 @@ def predict():
     else:
         prediction = prediction + "Malignant Cancer"
 
-    return render_template('index.html', prediction_text=f"You're breast cancer is a {prediction}")
+    return render_template(
+        "index.html", prediction_text=f"You're breast cancer is a {prediction}"
+    )
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get('PORT', 8080)))
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

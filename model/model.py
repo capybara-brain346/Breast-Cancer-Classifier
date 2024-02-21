@@ -15,13 +15,17 @@ class Model:
         self.x_train = None
 
     def data_splitting(self):
-        x = self.data.drop(['target'], axis=1)
-        y = self.data['target']
-        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.4, random_state=60)
+        x = self.data.drop(["target"], axis=1)
+        y = self.data["target"]
+        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(
+            x, y, test_size=0.4, random_state=60
+        )
 
     def train(self):
         self.data_splitting()
-        self.random_forest_model = RandomForestClassifier(max_depth=3).fit(self.x_train, self.y_train)
+        self.random_forest_model = RandomForestClassifier(max_depth=3).fit(
+            self.x_train, self.y_train
+        )
         return self.random_forest_model
 
     def final_build(self):
