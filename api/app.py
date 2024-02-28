@@ -1,13 +1,13 @@
 import os
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from venv import pickle
+import pickle
 
 app = Flask(__name__)
 
 
 def load_model():
-    model = pickle.load(open("model/model/random_forest_model.pkl", "rb"))
+    model = pickle.load(open(r"Breast-Cancer-Classification-WisconsinDiagnosticUCI\model\model\random_forest_model.pkl", "rb"))
     return model
 
 

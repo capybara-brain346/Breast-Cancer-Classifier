@@ -1,11 +1,11 @@
 import os
 import pandas as pd
-from venv import pickle
+import pickle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from pydantic import BaseModel
 
-
-class Model:
+class Model(BaseModel):
     def __init__(self, data) -> None:
         self.data = data
         self.random_forest_model = None
@@ -29,14 +29,14 @@ class Model:
         return self.random_forest_model
 
     def final_build(self):
-        if not os.path.exists("model"):
-            os.makedirs("model")
-        with open(r"model\random_forest_model.pkl", "wb") as file:
+        if not os.path.exists("Breast-Cancer-Classification-WisconsinDiagnosticUCI\model\model"):
+            os.makedirs("Breast-Cancer-Classification-WisconsinDiagnosticUCI\model\model")
+        with open(r"Breast-Cancer-Classification-WisconsinDiagnosticUCI\model\model\random_forest_model.pkl", "wb") as file:
             pickle.dump(self.random_forest_model, file)
 
 
 def main():
-    model_data = pd.read_csv(r"..\data\model_training_data.csv")
+    model_data = pd.read_csv(r"Breast-Cancer-Classification-WisconsinDiagnosticUCI\data\model_training_data.csv")
     Breast_Cancer_Classifier = Model(data=model_data)
     Breast_Cancer_Classifier.train()
     Breast_Cancer_Classifier.final_build()
