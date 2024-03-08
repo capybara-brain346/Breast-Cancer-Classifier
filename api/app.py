@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 def load_model():
-    model = pickle.load(open("model/model/random_forest_model.pkl", "rb"))
+    model = pickle.load(open(r"Breast-Cancer-Classification-WisconsinDiagnosticUCI\model\model\random_forest_model.pkl", "rb"))
     return model
 
 
