@@ -28,12 +28,12 @@ class Model():
         return self.random_forest_model
 
     def final_build(self):
-        with open(r"backend\artifacts\model.pkl", "wb") as file:
+        with open(r"..\artifacts\model.pkl", "wb") as file:
             pickle.dump(self.random_forest_model, file)
 
 
 def main():
-    model_data = pd.read_csv(r"backend\data\model_training_data.csv")
+    model_data = pd.read_csv(r"..\data\model_training_data.csv")
     Breast_Cancer_Classifier = Model(data=model_data)
     Breast_Cancer_Classifier.train()
     Breast_Cancer_Classifier.final_build()
