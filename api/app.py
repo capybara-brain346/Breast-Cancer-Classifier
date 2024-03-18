@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import pickle
 
 app = Flask(__name__)
@@ -12,7 +12,11 @@ def load_model():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    data = {
+        'title': 'Welcome to breast cancer classification app',
+        'message': 'This is an example integration between Angular and Python!'
+    }
+    return jsonify(data)
 
 
 @app.route("/predict", methods=["POST"])
