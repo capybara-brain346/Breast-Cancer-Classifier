@@ -57,15 +57,15 @@
     <h1>Know Your Cancers ✨</h1>
 
     <form action="{{ url_for('predict')}}" method="post">
-        <input type="number" step="any" name="radius_mean" placeholder="Radius Mean" required="required" />
-        <input type="number" step="any" name="texture_mean" placeholder="Texture Mean" required="required" />
-        <input type="number" step="any" name="area_mean" placeholder="Area Mean" required="required" />
-        <input type="number" step="any" name="smoothness_mean" placeholder="Smoothness Mean" required="required" />
-        <input type="number" step="any" name="compactness_mean" placeholder="Compactness Mean" required="required" />
-        <input type="number" step="any" name="concavity_mean" placeholder="Concavity Mean" required="required" />
-        <input type="number" step="any" name="concave_points_mean" placeholder="Concave Points Mean" required="required" />
-        <input type="number" step="any" name="symmetry_mean" placeholder="Symmetry Mean" required="required" />
-        <input type="number" step="any" name="fractal_dimension_mean" placeholder="Fractal Dimension Mean" required="required" />
+        <input type="text" name="radius_mean" placeholder="Radius Mean" required="required" />
+        <input type="text" name="texture_mean" placeholder="Texture Mean" required="required" />
+        <input type="text" name="area_mean" placeholder="Area Mean" required="required" />
+        <input type="text" name="smoothness_mean" placeholder="Smoothness Mean" required="required" />
+        <input type="text" name="compactness_mean" placeholder="Compactness Mean" required="required" />
+        <input type="text" name="concavity_mean" placeholder="Concavity Mean" required="required" />
+        <input type="text" name="concave_points_mean" placeholder="Concave Points Mean" required="required" />
+        <input type="text" name="symmetry_mean" placeholder="Symmetry Mean" required="required" />
+        <input type="text" name="fractal_dimension_mean" placeholder="Fractal Dimension Mean" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
