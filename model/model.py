@@ -1,10 +1,10 @@
-import os
 import pandas as pd
 import pickle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-class Model():
+
+class Model:
     def __init__(self, data) -> None:
         self.data = data
         self.random_forest_model = None

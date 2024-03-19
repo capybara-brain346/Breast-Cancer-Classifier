@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
@@ -12,6 +12,11 @@ def load_model():
 
 @app.route("/")
 def home():
+    return render_template("welcome.html")
+
+
+@app.route("/get_prediction", methods=["GET"])
+def form():
     return render_template("index.html")
 
 
